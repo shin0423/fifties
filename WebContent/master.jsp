@@ -12,14 +12,27 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <title>管理画面</title>
 <style type="text/css">
 </style>
+<script type="text/Javascript">
+	function submitAction(url) {
+		$('form').attr('action', url);
+		$('form').submit();
+	}
+</script>
 </head>
 <body>
 	<div id="header">
-		<div id="pr">
+		<fieldset>
+		<legend>
+		<h3>在庫数　変更方法</h3>
+		</legend>
+		<p>一度に変更できる個数は、在庫数±50個です。<br>
+		</fieldset>
 		</div>
 	</div>
 
@@ -31,8 +44,7 @@
 		<div>
 			<div>
 				<a href='<s:url action="GoInsertAction"/>'>新商品追加</a>
-				<a href='<s:url action="GoItemUpdateAction"/>'>商品情報更新</a>
-				<a href='<s:url action="GoItemDeleteAction"/>'>商品削除</a>
+
 			</div>
 			<s:form action="MasterUpdateAction">
 				<table>
@@ -67,6 +79,9 @@
 								</select>
 							</td>
 						</tr>
+					<tr><td>
+					<input type="submit" value="在庫を変更する">
+
 					</s:iterator>
 						<tr>
 							<td>
