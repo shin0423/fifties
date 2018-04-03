@@ -22,7 +22,7 @@ create table user_info(
 	sex tinyint default 0,
 	email varchar (50) not null,
 	status tinyint default 0,
-	logined tinyint default 0,
+	login_flg tinyint default 0,
 	m_flg tinyint default 0,
 	insert_date datetime not null,
 	update_date datetime
