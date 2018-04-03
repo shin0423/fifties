@@ -31,10 +31,10 @@
 		<legend>
 		<h3>在庫数　変更方法</h3>
 		</legend>
-		<p>一度に変更できる個数は、在庫数±50個です。<br>
+		<p>一度に変更できる個数は、在庫数±20個です。<br>
 		</fieldset>
 		</div>
-	</div>
+
 
 	<div id="main">
 		<div id="top">
@@ -46,9 +46,9 @@
 				<a href='<s:url action="GoInsertAction"/>'>新商品追加</a>
 
 			</div>
-			<s:form action="MasterUpdateAction">
 				<table>
-					<s:iterator value="buyItemDTOList">
+					<s:iterator value="productDTOList">
+			<s:form action="MasterUpdateAction">
 						<tr>
 							<td>
 								<h3><s:property value="itemName"/></h3>
@@ -69,7 +69,7 @@
 								<span>商品在庫追加</span>
 							</td>
 							<td>
-								<select name="count">
+								<select name="item_stock">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -82,14 +82,14 @@
 					<tr><td>
 					<input type="submit" value="在庫を変更する">
 
-					</s:iterator>
 						<tr>
 							<td>
 								<s:submit value="追加"/>
 							</td>
 						</tr>
-				</table>
 			</s:form>
+					</s:iterator>
+				</table>
 
 			<div>
 				<p><a href='<s:url action="GoHomeAction" />'>home</a></p>
