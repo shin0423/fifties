@@ -24,12 +24,12 @@ create table user_info(
 	status tinyint default 0,
 	login_flg tinyint default 0,
 	m_flg tinyint default 0,
-	regist_date datetime not null,
+	insert_date datetime not null,
 	update_date datetime
 );
 
 /*
- * 商品情報テーブル（戊亥）
+ * 商品情報テーブル（戌亥）
  */
 
 drop table if exists product_info;
@@ -41,13 +41,14 @@ create table product_info(
 	product_name_kana varchar (100) not null unique,
 	product_description varchar (255) not null,
 	category_id int not null,
+	product_stock int not null,
 	price int,
 	image_file_path varchar (100),
 	image_file_name varchar (50),
 	release_date date not null,
 	release_company varchar (50),
 	status tinyint default 0 not null,
-	regist_date datetime not null,
+	insert_date datetime not null,
 	update_date datetime
 );
 
@@ -62,7 +63,7 @@ create table cart_info(
 	user_id varchar  (16) not null,
 	product_id int not null,
 	product_count int not null,
-	regist_date datetime not null,
+	insert_date datetime not null,
 	update_date datetime
 );
 
@@ -78,7 +79,7 @@ create table purchase_history_info(
 	product_id int not null,
 	product_count int not null,
 	price int not null,
-	regist_date datetime not null,
+	insert_date datetime not null,
 	update_date datetime
 );
 
@@ -98,12 +99,12 @@ create table destination_info(
 	email varchar (32) not null,
 	tel_number varchar (13) not null,
 	user_address varchar (50) not null,
-	regist_date datetime not null,
+	insert_date datetime not null,
 	update_date datetime
 );
 
 /*
-*カテゴリーマスターテーブル（戊亥）
+*カテゴリーマスターテーブル（戌亥）
 */
 
 drop table if exists m_category;
@@ -161,9 +162,9 @@ create table favorite (
 
 
 /*
-*管理者アカウント
+*管理者アカウント（藤澤）
 */
 
 INSERT INTO user_info(user_id, password, family_name, first_name, family_name_kana,
-	first_name_kana, sex, email, m_flg, regist_date)
+	first_name_kana, sex, email, m_flg, insert_date)
 	VALUES("master", "123", "田中", "太郎", "たなか", "たろう", "0", "aaaa@com", 1, now());
