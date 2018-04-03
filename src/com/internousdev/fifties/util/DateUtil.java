@@ -1,10 +1,5 @@
 package com.internousdev.fifties.util;
 
-<<<<<<< HEAD
-public class DateUtil {
-
-}
-=======
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,4 +17,3 @@ public class DateUtil {
 		return simpleDateFormat.format(date);
 	}
  }
->>>>>>> 71dc1576d68e4ff809948ab7a61b03cc1b6ebda7
