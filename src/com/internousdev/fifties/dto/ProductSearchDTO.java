@@ -1,8 +1,8 @@
 package com.internousdev.fifties.dto;
 
 public class ProductSearchDTO {
-	public int categoryId;
-	public String itemName;
+	private int categoryId;
+	private String productName;
 
 	public int getCategoryId(){
 		return categoryId;
@@ -12,11 +12,11 @@ public class ProductSearchDTO {
 		this.categoryId = categoryId;
 	}
 
-	public String getItemName(){
-		return itemName;
+	public String getProductName(){
+		return product_name;
 	}
 
-	public void setItemName(String itemName){
-		this.itemName = itemName;
+	public void setProductName(String productName){
+		this.productName = productName;
 	}
 }
