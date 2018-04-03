@@ -13,7 +13,7 @@ public Connection getConnection() {
 	Connection con = null;
 	try {
 		Class.forName(driverName);
-		con = (Connection) DriverManager.getConnection(url,user,password);
+		con = DriverManager.getConnection(url,user,password);
 	} catch(ClassNotFoundException e) {
 		e.printStackTrace();
 	} catch(SQLException e) {
@@ -22,3 +22,4 @@ public Connection getConnection() {
 	return con;
 	}
 }
+
