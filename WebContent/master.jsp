@@ -29,7 +29,7 @@
 	<div id="header">
 		<fieldset>
 		<legend>
-		<h3>在庫数　変更方法</h3>
+		<h3>在庫数 変更方法</h3>
 		</legend>
 		<p>一度に変更できる個数は、在庫数±20個です。<br>
 		</fieldset>
@@ -43,11 +43,11 @@
 
 		<div>
 			<div>
-				<a href='<s:url action="GoInsertAction"/>'>新商品追加</a>
+				<a href='<s:url action="MasterAddConfirmAction"/>'>新商品追加</a>
 
 			</div>
 				<table>
-					<s:iterator value="productDTOList">
+					<s:iterator value="productList">
 			<s:form action="MasterUpdateAction">
 						<tr>
 							<td>
