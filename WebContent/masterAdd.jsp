@@ -73,17 +73,16 @@
 					<!-- 商品画像 -->
 					<tr>
 						<td>画像:</td>
-						<td><s:select name="imageName" id="image_bname"
-								list="imageFileNames" /></td>
+						<td><input type="file"  accept='image/*' name="file"></td>
 					</tr>
 
-					<input type="submit" value="登録">
 
 					<!-- 登録ボタン -->
 					<tr>
-						<td colspan="2">
-							<div class="image">
-								su
+						<td >
+					<input type="submit" value="登録">
+							<div >
+
 							</div>
 						</td>
 

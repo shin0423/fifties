@@ -64,7 +64,6 @@ public class CartInfoDAO {
 	//仮ユーザーがログインに成功したときのカート取得の処理。
 
 
-
 	//仮ユーザーのカート情報を取得
 	public ArrayList<CartInfoDTO> getTempUserCartList(String tempUserId){
 		ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
