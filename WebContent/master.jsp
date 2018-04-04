@@ -44,9 +44,7 @@
 
 
 	<div id="main">
-		<div id="top">
-			<p>master</p>
-		</div>
+
 
 		<div>
 			<div>
