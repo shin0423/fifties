@@ -28,7 +28,7 @@
 	<!-- 決済機能	ここから妹尾 -->
 	<action name="BuyItemConfirmAction" class="com.internousdev.fifties.action.BuyItemConfirmAction" method="execute">
 		<result name="success">buyItemConfirm.jsp</result>
-	</action>　
+	</action>
 	<action name="BuyItemCompleteAction" class="com.internousdev.fifties.action.BuyItemCompleteAction" method="execute">
 		<result name="success">buyItemComplete.jsp</result>
 	</action>
@@ -36,7 +36,7 @@
 
 	<!-- お問い合わせ ここから森 -->
 	<action name="InquiryAction" class="com.internousdev.fifties.action.InquiryAction" method="execute">
-		<result name="success">Inquiry.jsp</result>
+		<result name="success">inquiry.jsp</result>
 	</action>
 	<action name="InquiryConfirmAction" class="com.internousdev.fifties.action.InquiryConfirmAction" method="execute">
 		<result name="success">inquiryConfirm.jsp</result>

@@ -31,7 +31,6 @@ public class CartInfoDAO {
 				+ "pi.release_date as release_date, "
 				+ "ci.total_price as total_price "
 				+ "FROM cart_info as ci LEFT JOIN product_info as pi ON ci.product_id = pi.product_id WHERE ci.user_id = ?";
-
 		try {
 			PreparedStatement preparedStatement = con.prepareStatement(sql);
 			preparedStatement.setString(1, userId);
