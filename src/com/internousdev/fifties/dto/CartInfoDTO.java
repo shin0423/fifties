@@ -17,6 +17,8 @@ public class CartInfoDTO {
 	private String releaseDate;
 	private int stock;
 	private int price;
+	//商品ごとの合計金額
+	private int totalPrice;
 	private Date insertDate;
 	private Date updateDate;
 
@@ -97,6 +99,13 @@ public class CartInfoDTO {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 	public Date getInsertDate() {
 		return insertDate;
