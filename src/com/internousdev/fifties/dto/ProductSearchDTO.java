@@ -13,7 +13,7 @@ public class ProductSearchDTO {
 	}
 
 	public String getProductName(){
-		return product_name;
+		return productName;
 	}
 
 	public void setProductName(String productName){
