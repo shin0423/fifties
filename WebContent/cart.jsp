@@ -18,7 +18,6 @@
 
 <!-- 	ログインしているかいないかで分岐 -->
 	<s:if test="session.loginFlg == false">
-
 	</s:if>
 	<s:form action="決済アクションへ">
 		<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>

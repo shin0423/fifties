@@ -8,10 +8,22 @@
 	<!--  <constant name="struts.devMode" value="true" /> -->
 	<package name="com.internousdev.fifties.action" extends="struts-default">
 
-	<action name="StartAction" class="com.internousdev.fifties.action" method="execute">
+
+	<!-- ログイン認証　坂東 -->
+	<action name="StartAction" class="com.internousdev.fifties.action.StartAction" method="execute">
 		<result name="success">home.jsp</result>
 	</action>
 
+	<action name="GoLoginAction" class="com.internousdev.fifites.action.GoLoginAction" method="execute">
+		<result name="success">login.jsp</result>
+	</action>
+	<!-- 	ここまで坂東 -->
+
+	<!-- カート機能　ここから山本 -->
+	<action name="CartAction" class="com.internousdev.fifties.action.CartAction" method="execute">
+		<result name="success">cart.jsp</result>
+	</action>
+	<!-- 	ここまで山本 -->
 
 
 
