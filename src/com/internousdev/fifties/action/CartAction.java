@@ -22,12 +22,18 @@ public class CartAction extends ActionSupport implements SessionAware {
 
 
 
+		//ログインしていない場合。
 		if(!(boolean) session.get("loginFlg")) {
 			session.put("loginFlg", false);
 		}
+		//ログインしている場合。
 		if((boolean) session.get("loginFlg")){
+			cartList = cartInfoDAO.getUserCartList((String) session.get("userId"));
+
 
 		}else{
+			String tempUserId = (String) session.get("tempUserId");
+			cartList = cartInfoDAO.getTempUserCartList((String) session.get("userId"));
 
 		}
 		//tempUserIdをクッキーに保存して判別
