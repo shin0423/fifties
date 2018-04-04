@@ -15,8 +15,6 @@ public class CartInfoDAO {
 	private ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
 
 
-
-
 	//ログインユーザーのカート情報を取得
 	public ArrayList<CartInfoDTO> getUserCartList(String userId){
 		ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
