@@ -73,7 +73,7 @@
 					<!-- 商品画像 -->
 					<tr>
 						<td>画像:</td>
-						<td><input type="file"  accept='image/*' name="file"></td>
+						<td><input type="file"  accept='image/*' name="image"></td>
 					</tr>
 
 
