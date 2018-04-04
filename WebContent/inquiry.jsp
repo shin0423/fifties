@@ -22,10 +22,10 @@
 	<s:form method="post" action="InquiryConfirmAction">
 
 		お名前:
-		<input type="text" name="name" value="" />
+		<input type="text" name="inquiryName" value="" />
 
 		メールアドレス:
-		<input type="text" name="email" value="" size="35" />
+		<input type="text" name="inquiryEmail" value="" size="35" />
 
 		お問合わせの種類:
 		<select name="ptype">
@@ -37,10 +37,10 @@
 		</select>
 
 		お問い合わせ内容:
-		<s:textarea name="body" />
+		<s:textarea name="inquiryBody" />
 		<s:submit value="確認へ" />
 	</s:form>
 
-	前画面に戻る場合は...
+	ホーム画面にもどる
 </body>
 </html>

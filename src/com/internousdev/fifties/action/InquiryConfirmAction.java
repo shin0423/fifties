@@ -7,23 +7,23 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class InquiryConfirmAction extends ActionSupport implements SessionAware{
-	private String name;
-	private String email;
+	private String inquiryName;
+	private String inquiryEmail;
 	private String qtype;
-	private String body;
-	public Map<String,Object> inquirySession;
+	private String inquiryBody;
+	public Map<String,Object> session;
 	private String errorMessage;
 
 	public String execute(){
 		String result = SUCCESS;
-		if(!(name.equals(""))
+		if(!(inquiryName.equals(""))
 		 && !(qtype.equals(""))
 		 && !(qtype.equals("notSelect"))
-		 && !(body.equals(""))){
-			inquirySession.put("name", name);
-			inquirySession.put("email", email);
-			inquirySession.put("qtype", qtype);
-			inquirySession.put("body", body);
+		 && !(inquiryBody.equals(""))){
+			session.put("inquiryName", inquiryName);
+			session.put("inquiryEmail", inquiryEmail);
+			session.put("qtype", qtype);
+			session.put("inquiryBody", inquiryBody);
 		}else{
 			setErrorMessage("未記入の項目があります。");
 			result="ERROR";
@@ -31,19 +31,19 @@ public class InquiryConfirmAction extends ActionSupport implements SessionAware{
 	return result;
 	}
 
-	public String getName(){
-		return name;
+	public String getInquiryName(){
+		return inquiryName;
 	}
-	public void setName(String name){
-		this.name = name;
+	public void setInquiryName(String inquiryName){
+		this.inquiryName = inquiryName;
 	}
 
 
-	public String getEmail(){
-		return email;
+	public String getInquiryEmail(){
+		return inquiryEmail;
 	}
-	public void setEmail(String email){
-		this.email = email;
+	public void setInquiryEmail(String inquiryEmail){
+		this.inquiryEmail = inquiryEmail;
 	}
 
 
@@ -55,11 +55,11 @@ public class InquiryConfirmAction extends ActionSupport implements SessionAware{
 	}
 
 
-	public String getBody(){
-		return body;
+	public String getInquiryBody(){
+		return inquiryBody;
 	}
-	public void setBody(String body){
-		this.body = body;
+	public void setInquiryBody(String inquiryBody){
+		this.inquiryBody = inquiryBody;
 	}
 
 
@@ -72,10 +72,10 @@ public class InquiryConfirmAction extends ActionSupport implements SessionAware{
 
 
 	@Override
-	public void setSession(Map<String,Object> inquirySession){
-		this.inquirySession = inquirySession;
+	public void setSession(Map<String,Object> session){
+		this.session = session;
 	}
 	public Map<String,Object> getSession(){
-		return this.inquirySession;
+		return this.session;
 	}
 }

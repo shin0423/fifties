@@ -12,10 +12,10 @@
 
 	<s:form action="InquiryCompleteAction">
 		お名前:
-		<s:property value="name" escape="false"/>
+		<s:property value="inquiryName" escape="false"/>
 
 		メールアドレス:
-		<s:property value="email" escape="false" />
+		<s:property value="inquiryEmail" escape="false" />
 
 		お問合わせの種類:
 		<s:if test='qtype="company"'>会社について</s:if>
@@ -24,7 +24,7 @@
 		<s:if test='qtype="other"'>その他お問合わせ</s:if>
 
 		お問い合わせ内容:
-		<s:property value="body" escape="false" />
+		<s:property value="inquiryBody" escape="false" />
 
 		<s:submit value="送信する" />
 	</s:form>
