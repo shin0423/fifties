@@ -12,10 +12,13 @@ public class StartAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 
-		if (!(session.containsKey("LoginUserId")) && !(session.containsKey("tempUserId"))) {
+		if (!(session.containsKey("loginFlg")) && !(session.containsKey("tempUserId"))) {
 			Integer tempUserId = Integer.valueOf((int) (Math.random() * 1000000));
+			boolean loginFlg = false;
 			session.put("tempUserId", tempUserId);
+			session.put("loginFlg", loginFlg);
 		}
+
 		return SUCCESS;
 	}
 

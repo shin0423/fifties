@@ -101,8 +101,13 @@ public class CartInfoDAO {
 				dto.setProductCount(resultSet.getInt("product_count"));
 				dto.setReleaseCompany(resultSet.getString("release_company"));
 				dto.setReleaseDate(resultSet.getString("release_date"));
+				cartList.add(dto);
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		return cartList;
 	}
+
+	//ログインアクションで、仮ユーザーがログイン前にカートに商品を入れているか確認。
 }
