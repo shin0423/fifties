@@ -28,8 +28,8 @@
 
 		<s:submit value="送信する" />
 	</s:form>
-
-		戻って編集する
-		ホーム画面にもどる？
+<%-- 戻るボタンにしてもいいかもしれない --%>
+		戻って編集する場合は<a href='<s:url action="InquiryConfirmAction" />'>こちら</a>
+		ホームに戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
 </body>
 </html>

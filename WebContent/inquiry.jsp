@@ -41,6 +41,6 @@
 		<s:submit value="確認へ" />
 	</s:form>
 
-	ホーム画面にもどる
+	ホームに戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
 </body>
 </html>
