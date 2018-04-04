@@ -1,183 +1,54 @@
 package com.internousdev.fifties.action;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.fifties.dao.AddressDAO;
+import com.internousdev.fifties.dto.AddressDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AddressSelectAction extends ActionSupport {
+public class AddressSelectAction extends ActionSupport implements SessionAware {
 
-	private String loginUserId;
-	private String loginPassword;
-	private String familyName;
-	private String firstName;
-	private String familyNameKana;
-	private String firstNameKana;
-	private String sex;
-	private String mail;
-	private String secretQuestion;
-	private String secretAnswer;
-	private String email;
-	private String telNumber;
-	private String addr11;
-	private String zip11;
+	AddressDAO addressDAO = new AddressDAO();
+	AddressDTO addressDTO = new AddressDTO();
 
-	private Map<String, Object> session;
+	private ArrayList<AddressDTO> addressInfoListDTO = new ArrayList<AddressDTO>();
+
+	public Map<String, Object> session;
+
+	String result;
 
 
-	public String execute() {
-		return SUCCESS;
+	public String execute() throws SQLException{
+		result = SUCCESS;
+
+		addressInfoListDTO.addAll(adressDAO.getAddressInfo(session.get("userId").toString()));
+
+		if(adressInfoListDTO.get(0) == null) {
+
+			result = ERROR;
+		}
+
+		return result;
+
 	}
 
+	public ArrayList<AddressDTO> getAddressInfoListDTO(){
 
-	public String getLoginUserId() {
-		return loginUserId;
+		return addressInfoListDTO;
 	}
 
+	public void setAddressInfoListDTO(ArrayList<AddressDTO> addressInfoListDTO) {
 
-	public void setLoginUserId(String loginUserId) {
-		this.loginUserId = loginUserId;
+		this.addressInfoListDTO = addressInfoListDTO;
 	}
 
-
-	public String getLoginPassword() {
-		return loginPassword;
-	}
-
-
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
-	}
-
-
-	public String getFamilyName() {
-		return familyName;
-	}
-
-
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
-	}
-
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-
-	public String getFamilyNameKana() {
-		return familyNameKana;
-	}
-
-
-	public void setFamilyNameKana(String familyNameKana) {
-		this.familyNameKana = familyNameKana;
-	}
-
-
-	public String getFirstNameKana() {
-		return firstNameKana;
-	}
-
-
-	public void setFirstNameKana(String firstNameKana) {
-		this.firstNameKana = firstNameKana;
-	}
-
-
-	public String getSex() {
-		return sex;
-	}
-
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-
-	public String getMail() {
-		return mail;
-	}
-
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-
-	public String getSecretQuestion() {
-		return secretQuestion;
-	}
-
-
-	public void setSecretQuestion(String secretQuestion) {
-		this.secretQuestion = secretQuestion;
-	}
-
-
-	public String getSecretAnswer() {
-		return secretAnswer;
-	}
-
-
-	public void setSecretAnswer(String secretAnswer) {
-		this.secretAnswer = secretAnswer;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getTelNumber() {
-		return telNumber;
-	}
-
-
-	public void setTelNumber(String telNumber) {
-		this.telNumber = telNumber;
-	}
-
-
-	public String getAddr11() {
-		return addr11;
-	}
-
-
-	public void setAddr11(String addr11) {
-		this.addr11 = addr11;
-	}
-
-
-	public String getZip11() {
-		return zip11;
-	}
-
-
-	public void setZip11(String zip11) {
-		this.zip11 = zip11;
-	}
-
-
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
-
+	@Override
 	public void setSession(Map<String, Object> session) {
+
 		this.session = session;
 	}
-
-
 }
-exit
