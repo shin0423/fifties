@@ -3,12 +3,9 @@ package com.internousdev.fifties.action;
 import java.sql.SQLException;
 import java.util.Map;
 
-import org.apache.struts2.interceptor.SessionAware;
-
 import com.internousdev.fifties.dao.MasterUpdateDAO;
-import com.opensymphony.xwork2.ActionSupport;
-public class MasterUpdateAction extends ActionSupport implements SessionAware{
 
+public class MasterUpdateAction {
     private String product_id;
 	private  int item_stock;
 	private String dateUtil;
@@ -23,7 +20,7 @@ public class MasterUpdateAction extends ActionSupport implements SessionAware{
 
 
 		masterUpdateDAO.productUpdateInfo(item_stock,  Integer.parseInt(product_id.toString()),dateUtil);
-
+		
 
 		String result = SUCCESS;
 		return result;
@@ -48,8 +45,5 @@ public class MasterUpdateAction extends ActionSupport implements SessionAware{
 		this.item_stock=item_stock;
 	}
 
-	@Override
-	public void setSession(Map<String,Object> session){
-		this.session=session;
-	}
+
 }
