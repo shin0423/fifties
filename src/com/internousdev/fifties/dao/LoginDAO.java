@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 import com.internousdev.fifties.dto.LoginDTO;
 import com.internousdev.fifties.util.DBConnector;
- public class LoginDAO {
-public LoginDTO select(String name,String password) throws SQLException{
+public class LoginDAO {
+	public LoginDTO select(String name,String password) throws SQLException{
 		LoginDTO dto=new LoginDTO();
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();

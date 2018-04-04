@@ -14,16 +14,17 @@ private Map<String, Object> session;
 
 public String execute() throws SQLException {
 	String ret = ERROR;
-   LoginDAO dao = new LoginDAO();
-     LoginDTO dto = new LoginDTO();
+	LoginDAO dao = new LoginDAO();
+	LoginDTO dto = new LoginDTO();
 /*ここ*/
      dto = dao.select(name,password);
      if(name.equals(dto.getName())) {
      if(password.equals(dto.getPassword())){
               ret = SUCCESS ;
      				}
-     		}
-session.put("name", dto.getName());
+     }
+
+     session.put("name", dto.getName());
 return ret;
 }
 
