@@ -11,5 +11,6 @@
 <h1>ホーム画面</h1>
 <p>ログイン画面は<a href='<s:url action="GoLoginAction"/>'>こちら</a></p>
 <p>カートは<a href='<s:url action="CartAction"/>'>こちら</a></p>
+<p>お問合わせは<a href='<s:url action="InquiryAction"/>'>こちら</a></p>
 </body>
 </html>
