@@ -12,16 +12,29 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <title>管理画面</title>
 <style type="text/css">
 </style>
+<script type="text/Javascript">
+	function submitAction(url) {
+		$('form').attr('action', url);
+		$('form').submit();
+	}
+</script>
 </head>
 <body>
 	<div id="header">
-		<div id="pr">
+		<fieldset>
+		<legend>
+		<h3>在庫数　変更方法</h3>
+		</legend>
+		<p>一度に変更できる個数は、在庫数±20個です。<br>
+		</fieldset>
 		</div>
-	</div>
+
 
 	<div id="main">
 		<div id="top">
@@ -31,12 +44,11 @@
 		<div>
 			<div>
 				<a href='<s:url action="GoInsertAction"/>'>新商品追加</a>
-				<a href='<s:url action="GoItemUpdateAction"/>'>商品情報更新</a>
-				<a href='<s:url action="GoItemDeleteAction"/>'>商品削除</a>
+
 			</div>
-			<s:form action="MasterUpdateAction">
 				<table>
-					<s:iterator value="buyItemDTOList">
+					<s:iterator value="productDTOList">
+			<s:form action="MasterUpdateAction">
 						<tr>
 							<td>
 								<h3><s:property value="itemName"/></h3>
@@ -57,7 +69,7 @@
 								<span>商品在庫追加</span>
 							</td>
 							<td>
-								<select name="count">
+								<select name="item_stock">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -67,14 +79,17 @@
 								</select>
 							</td>
 						</tr>
-					</s:iterator>
+					<tr><td>
+					<input type="submit" value="在庫を変更する">
+
 						<tr>
 							<td>
 								<s:submit value="追加"/>
 							</td>
 						</tr>
-				</table>
 			</s:form>
+					</s:iterator>
+				</table>
 
 			<div>
 				<p><a href='<s:url action="GoHomeAction" />'>home</a></p>
