@@ -6,10 +6,64 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
 	<!--  <constant name="struts.devMode" value="true" /> -->
-	<package name="com.internousdevwork.fifties.action" extends="struts-default">
+	<package name="com.internousdev.fifties.action" extends="struts-default">
 
 
+	<!-- ログイン認証　坂東 -->
+	<action name="StartAction" class="com.internousdev.fifties.action.StartAction" method="execute">
+		<result name="success">home.jsp</result>
+	</action>
 
+	<action name="GoLoginAction" class="com.internousdev.fifties.action.GoLoginAction" method="execute">
+		<result name="success">login.jsp</result>
+	</action>
+	<!-- 	ここまで坂東 -->
+
+	<!-- カート機能　ここから山本 -->
+	<action name="CartAction" class="com.internousdev.fifties.action.CartAction" method="execute">
+		<result name="success">cart.jsp</result>
+	</action>
+	<!-- 	ここまで山本 -->
+
+	<!-- 決済機能	ここから妹尾 -->
+	<action name="BuyItemConfirmAction" class="com.internousdev.fifties.action.BuyItemConfirmAction" method="execute">
+		<result name="success">buyItemConfirm.jsp</result>
+	</action>
+	<action name="BuyItemCompleteAction" class="com.internousdev.fifties.action.BuyItemCompleteAction" method="execute">
+		<result name="success">buyItemComplete.jsp</result>
+	</action>
+	<!-- 	ここまで -->
+
+	<!-- お問い合わせ ここから森 -->
+	<action name="InquiryAction" class="com.internousdev.fifties.action.InquiryAction" method="execute">
+		<result name="success">inquiry.jsp</result>
+	</action>
+	<action name="InquiryConfirmAction" class="com.internousdev.fifties.action.InquiryConfirmAction" method="execute">
+		<result name="success">inquiryConfirm.jsp</result>
+		<result name="error">inquiry.jsp</result>
+	</action>
+	<action name="InquiryCompleteAction" class="com.internousdev.fifties.action.InquiryCompleteAction" method="execute">
+		<result name="success">inquiryComplete.jsp</result>
+	</action>
+	<!-- ここまで -->
+
+	<!-- ここから 戌亥&中嶋 -->
+	<action name="ProductSearchAction" class="com.internousdev.fifties.action.ProductSearchAction" method="execute">
+		<result name="success">productList.jsp</result>
+	</action>
+	<action name="ProductDetailsActon" class="com.internousdev.fifties.action.ProductDetailsAction" method="execute">
+		<result name="success">productDetails.jsp</result>
+	</action>
+	<!-- 	ここまで -->
+
+	<!-- ここから　藤澤 -->
+    <action name="MasterAction" class="com.internousdev.fifties.action.MasterAction" method="execute">
+		<result name="success">master.jsp</result>
+	</action>
+	<action name="MaserUpdateActon" class="com.internousdev.fifties.action.MasterUpdateAction" method="execute">
+		<result name="success">master.jsp</result>
+	</action>
+	<!-- ここまで -->
 
 </package>
 </struts>
