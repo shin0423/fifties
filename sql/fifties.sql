@@ -6,26 +6,27 @@ create database if not exists fifties;
 use fifties;
 
 /*
- * 会員情報テーブル（木村）
+ * 会員情報テーブル
  */
-
 drop table if exists user_info;
 
 create table user_info(
-	id int not null primary key auto_increment,
-	user_id varchar (16) not null unique,
-	password varchar (16) not null,
-	family_name varchar (32) not null,
-	first_name varchar (32) not null,
-	family_name_kana varchar (32) not null,
-	first_name_kana varchar (32) not null,
-	sex tinyint default 0,
-	email varchar (50) not null,
-	status tinyint default 0,
-	login_flg tinyint default 0,
-	m_flg tinyint default 0,
-	insert_date datetime not null,
-	update_date datetime
+    id int not null primary key auto_increment,--ID
+    user_id varchar(16) not null unique,--ユーザーID
+    password varchar(16) not null,--パスワード
+    family_name varchar(32) not null,--姓
+    first_name varchar(32) not null,--名
+    family_name_kana varchar(32) not null,--姓かな
+    first_name_kana varchar(32) not null,--名かな
+    sex tinyint default 0,--性別(男 女性)
+    email varchar(50) not null,--メールアドレス
+    question varchar(255) not null,--秘密の質問()
+    answer varchar(255) not null,--秘密の質問の答え
+    status tinyint default 0,--ステータス(無効 有効)
+    logined tinyint default 0,--ログインフラグ(未ログイン ログイン済み)
+    regist_date datetime not null,--登録日
+    update_date datetime,--更新日
+    m_flg tinyint default 0
 );
 
 /*
