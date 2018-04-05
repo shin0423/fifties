@@ -1,3 +1,6 @@
+//@中嶋
+
+
 package com.internousdev.fifties.action;
 
 import java.util.ArrayList;
@@ -8,12 +11,27 @@ import com.internousdev.fifties.dto.ProductDTO;
 
 
 public class ProductSearchAction {
-	private int category = 0;
+	private String category ;
 	private String searchWord;
 	private String searchMessage;
-
+//検索結果の詳細をリストに格納
 	private ProductSearchDAO searchDAO = new ProductSearchDAO();
-	private List searchDTOList = new ArrayList<ProductDTO>();
+	private List<ProductDTO> searchList = new ArrayList<ProductDTO>();
+
+	/*検索結果を１ページに９個ごと表示させたい
 	private ArrayList<ArrayList<ProductDTO>>  mainList = new ArrayList();
+	private int pageCount;
+
+	private List<Integer> pageList = new ArrayList<>();
+	public String execute() throws SQLException {
+		searchList = ProductSearchDAO.getItemInfo(searchWord, category);
+		}
+		*/
+
+
+		//検索がHitしない場合検索結果が存在しないと表記
+//検索ワードを検索後もインプットBOXに出力
 
 }
+
+

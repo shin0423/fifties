@@ -1,3 +1,5 @@
+//@中嶋
+
 package com.internousdev.fifties.dao;
 
 import java.sql.Connection;
@@ -16,8 +18,8 @@ public class ProductSearchDAO {
 		List<ProductDTO> searchDTOList = new ArrayList<ProductDTO>();
 		DBConnector dbConnector = new DBConnector();
 		Connection con = dbConnector.getConnection();
-		String sql = "SELECT*FROM user_info";
-
+		String sql = "SELECT*FROM product_info";
+//選択されたカテゴリID、検索ワードと一致する場合
 		if (categoryId == 0) {
 			sql = sql + " WEHRE category_id";
 		} else {
@@ -60,4 +62,3 @@ public class ProductSearchDAO {
 
 	}
 }
-/* category_id LIKE '%category%' AND product_name LIKE '%searchWord%' */
