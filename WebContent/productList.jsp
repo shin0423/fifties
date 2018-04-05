@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" cintent="text/css"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
 <title>商品一覧画面</title>
 </head>
 <body>
@@ -13,7 +13,18 @@
 <!-- メイン -->
 <h3>商品一覧</h3>
 
+<s:iterator value="searchList">
 
+<dl>
+<dt><img src="<s:property value= 'image_file_path'/>"></dt>
+
+<dd><s:property value="product_name"/></dd>
+
+<dd><s:property value="price"/>円</dd>
+
+<dd><s:property value="product_stock"/>個</dd>
+</dl>
+</s:iterator>
 
 <!-- フッター -->
 </body>
