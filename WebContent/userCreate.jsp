@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>新規ユーザー登録</title>
 <link rel="stylesheet" type="text/css" href="css/form.css">
