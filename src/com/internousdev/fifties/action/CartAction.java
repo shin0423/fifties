@@ -30,6 +30,10 @@ public class CartAction extends ActionSupport implements SessionAware {
 			cartList = cartInfoDAO.getTempUserCartList(tempUserId);
 		}
 
+		//商品ごとの合計金額を計算
+
+		//カートの合計金額を計算
+
 
 		//tempUserIdをクッキーに保存して判別
 		//仮ユーザーもデータベースに保存する。

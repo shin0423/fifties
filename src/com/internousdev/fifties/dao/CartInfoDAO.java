@@ -3,6 +3,7 @@ package com.internousdev.fifties.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.internousdev.fifties.dto.CartInfoDTO;
@@ -13,6 +14,40 @@ public class CartInfoDAO {
 	private DBConnector dbConnector = new DBConnector();
 	private Connection con = dbConnector.getConnection();
 	private ArrayList<CartInfoDTO> cartList = new ArrayList<CartInfoDTO>();
+
+	//ログインユーザーの商品情報をカートに追加する
+	public int insertUserCart(String userId,int productId,int productCount, int price){
+		String sql = "INSERT INTO cart_info(user_id,product_id,product_count,price,insert_date) VALUES(?,?,?,?,NOW())";
+		int count = 0;
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setInt(2, productId);
+			ps.setInt(3, productCount);
+			ps.setInt(4, price);
+			count = ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return count;
+	}
+
+	//仮ユーザーがカートに商品を追加する。
+	public int insertTempUserCart(String tempUserId,int productId,int productCount, int price){
+		String sql = "INSERT INTO cart_info(temp_user_id,product_id,product_count,price,insert_date) VALUES(?,?,?,?,NOW())";
+		int count = 0;
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, tempUserId);
+			ps.setInt(2, productId);
+			ps.setInt(3, productCount);
+			ps.setInt(4, price);
+			count = ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return count;
+	}
 
 
 	//ログインユーザーのカート情報を取得
