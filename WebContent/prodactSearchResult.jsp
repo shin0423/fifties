@@ -12,7 +12,7 @@
 	<div id="header">
 		<span>カテゴリー</span>
 		<s:form action="PriductSearchAction">
-			<select name="categoryId">
+			<select name="category">
 			<option value=0>全てのカテゴリー</option>
 			<option value=1>車</option>
 			<option value=2>音楽・映画</option>
