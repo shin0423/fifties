@@ -14,13 +14,13 @@ import com.internousdev.fifties.util.DBConnector;
 
 public class ProductSearchDAO {
 
-	public List<ProductDTO> getProduct_Info(String productName, int categoryId) throws SQLException {
+	public List<ProductDTO> getProduct_Info(String searchWord, int category) throws SQLException {
 		List<ProductDTO> searchDTOList = new ArrayList<ProductDTO>();
 		DBConnector dbConnector = new DBConnector();
 		Connection con = dbConnector.getConnection();
 		String sql = "SELECT*FROM product_info";
-//選択されたカテゴリID、検索ワードと一致する場合
-		if (categoryId == 0) {
+		// 選択されたカテゴリID、検索ワードと一致する場合
+		if (category == 0) {
 			sql = sql + " WEHRE category_id";
 		} else {
 			sql = sql + " WEHRE category_id LIKE '%category%' AND product_name LIKE '%searchWord%'";
