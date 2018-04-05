@@ -170,5 +170,5 @@ INSERT INTO user_info(user_id, password, family_name, first_name, family_name_ka
 	first_name_kana, sex, email, m_flg, insert_date)
 	VALUES("master", "123", "田中", "太郎", "たなか", "たろう", "0", "aaaa@com", 1, now());
 
-INSERT INTO product_info(product_name,product_name_kana,product_stock,price)
-VALUES("日本初TV","ニホンハツテレビ","5","100000");
+INSERT INTO product_info(id,product_id,product_name,product_name_kana,product_description,category_id,product_stock,price,image_file_path,image_file_name,release_date,release_company,status,regist_date,update_date)
+VALUES(0,0,"日本初TV","ニホンハツテレビ","初めてのテレビ","3","5","100000","a.jpg","日本初のテレビ",19500405,"T芝",0,now,now);
