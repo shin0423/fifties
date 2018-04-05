@@ -19,6 +19,27 @@
 	</action>
 	<!-- 	ここまで坂東 -->
 
+	<!-- 新規ユーザー登録 木村 -->
+		<action name="UserCreateAction" class="com.internousdev.fifties.action.UserCreateAction"
+			method="execute">
+			<result name="success">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateConfirmAction"
+			class="com.internousdev.fifties.action.UserCreateConfirmAction"
+			method="execute">
+			<result name="success">userCreateConfirm.jsp</result>
+			<result name="error">userCreate.jsp</result>
+		</action>
+
+		<action name="UserCreateCompleteAction"
+			class="com.internousdev.fifties.action.UserCreateCompleteAction"
+			method="execute">
+			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">errorPage.jsp</result>
+		</action>
+	<!-- ここまで木村 -->
+
 	<!-- カート機能　ここから山本 -->
 	<action name="CartAction" class="com.internousdev.fifties.action.CartAction" method="execute">
 		<result name="success">cart.jsp</result>
