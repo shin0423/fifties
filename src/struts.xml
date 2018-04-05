@@ -51,7 +51,7 @@
 	<action name="ProductSearchAction" class="com.internousdev.fifties.action.ProductSearchAction" method="execute">
 		<result name="success">productList.jsp</result>
 	</action>
-	<action name="ProductDetailsActon" class="com.internousdev.fifties.action.ProductDetailsAction" method="execute">
+	<action name="ProductDetailsAction" class="com.internousdev.fifties.action.ProductDetailsAction" method="execute">
 		<result name="success">productDetails.jsp</result>
 	</action>
 	<!-- 	ここまで -->
@@ -60,7 +60,7 @@
     <action name="MasterAction" class="com.internousdev.fifties.action.MasterAction" method="execute">
 		<result name="success">master.jsp</result>
 	</action>
-	<action name="MaserUpdateActon" class="com.internousdev.fifties.action.MasterUpdateAction" method="execute">
+	<action name="MasterUpdateAction" class="com.internousdev.fifties.action.MasterUpdateAction" method="execute">
 		<result name="success">master.jsp</result>
 	</action>
 	<!-- ここまで -->

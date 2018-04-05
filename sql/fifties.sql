@@ -168,3 +168,6 @@ create table favorite (
 INSERT INTO user_info(user_id, password, family_name, first_name, family_name_kana,
 	first_name_kana, sex, email, m_flg, insert_date)
 	VALUES("master", "123", "田中", "太郎", "たなか", "たろう", "0", "aaaa@com", 1, now());
+
+INSERT INTO product_info(product_name,product_name_kana,product_stock,price)
+VALUES("日本初TV","ニホンハツテレビ","5","100000");
