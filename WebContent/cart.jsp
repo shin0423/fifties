@@ -11,35 +11,25 @@
 	<title></title>
 </head>
 <body>
-
 	<s:form action="CartDeleteAction">
-		<s:submit value="削除"/>
+		<s:iterator value="cartList">
+			<table>
+				<tr>
+				</tr>
+			</table>
+		</s:iterator>
 	</s:form>
-
-<!-- 	ログインしているかいないかで分岐 -->
-	<s:if test="session.loginFlg == false">
-	</s:if>
-	<s:form action="決済アクションへ">
-		<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-		<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-		<s:submit value="決済"/>
-	</s:form>
-	<s:if test="session.loginFlg == false">
-		<s:form action ="GoLoginAction" theme="simple">
-			<div class="settlement_btn">
-				<s:submit value="ログイン" id="set_c"/>
-			</div>
+	<s:if test="session.loginFlg == true">
+		<s:form action="BuyItemConfirmAction" theme="simple">
+			<s:submit value="決済"/>
 		</s:form>
 	</s:if>
 	<s:else>
-		<s:if test="! cartList.isEmpty()">
-			<s:form action="SettlementConfirmAction" theme="simple">
-			   <s:hidden name="token" value="%{token}" />
-				<div class="settlement_btn">
-					<s:submit id="set_b" value="決算画面へ" />
-				</div>
-			</s:form>
-		</s:if>
+		<s:form action ="GoLoginAction" theme="simple">
+			<div>
+				<s:submit value="ログイン"/>
+			</div>
+		</s:form>
 	</s:else>
 </body>
 </html>
